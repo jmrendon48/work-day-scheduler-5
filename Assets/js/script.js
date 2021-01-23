@@ -1,3 +1,6 @@
+// global variables
+var events = [];
+
 // use moment to change currentDay text to the current day
 var currentDayUpdate = function() {
     var currentDay = moment().format("dddd, MMMM Do");
@@ -40,21 +43,22 @@ $(".event-container").on("click", "p", function() {
         .addClass("event-textarea")
         .val(text);
     $(this).replaceWith(textInput);
-
-    // auto focus new element
-    textInput.trigger("focus");
 });
 
-$(".event-container").on("blur", "textarea", function() {
+// the event of corrisponding time block is saved to the page and local storage
+$(".button-container").on("click", "button", function() {
     // get current value of textarea
-    var text = $(this).val();
+    var text = $(".event-textarea").val();
 
     var eventP = $("<p>")
         .addClass("event")
         .text(text);
 
     // replace textarea with new content
-    $(this).replaceWith(eventP);
+    $(".event-textarea").replaceWith(eventP);
+
+    var hourNumber = $(this).data("hour");
+    localStorage.setItem("hour-" + hourNumber, text);
 });
 
 currentDayUpdate();
