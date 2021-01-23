@@ -56,8 +56,6 @@ $(".button-container").on("click", "button", function() {
 
     // get textarea with same data-hour value
     var textareaHour = $("#" + hourNumber).data("hour");
-    console.log(hourNumber);
-    console.log(textareaHour);
 
     // get current value of textarea
     var text = $("#" + hourNumber).val();
@@ -76,8 +74,18 @@ $(".button-container").on("click", "button", function() {
     }
 });
 
+var loadEvents = function () {
+    for (var e = 9; e < 18; e++) {
+        var savedEvent = localStorage.getItem("hour-" + e);
+        var eventTemplate = $(".event").filter('[data-hour=' + [e] + "]");
+        eventTemplate.text(savedEvent);
+    }
+};
+
 currentDayUpdate();
 
 timeBlockColorCoding();
+
+loadEvents();
 
 setInterval(timeBlockColorCoding, 60000);
