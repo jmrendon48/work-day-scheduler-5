@@ -38,27 +38,42 @@ $(".event-container").on("click", "p", function() {
         .text()
         .trim();
 
+    var pHour = $(this).data("hour");
+    
     // replace p element with a new textarea
     var textInput = $("<textarea>")
         .addClass("event-textarea")
+        .data("hour", pHour)
+        .attr("id", pHour)
         .val(text);
     $(this).replaceWith(textInput);
 });
 
 // the event of corrisponding time block is saved to the page and local storage
 $(".button-container").on("click", "button", function() {
-    // get current value of textarea
-    var text = $(".event-textarea").val();
+    // get data-hour value of button
+    var hourNumber = $(this).data("hour");
 
+    // get textarea with same data-hour value
+    var textareaHour = $("#" + hourNumber).data("hour");
+    console.log(hourNumber);
+    console.log(textareaHour);
+
+    // get current value of textarea
+    var text = $("#" + hourNumber).val();
+
+    // create new content
     var eventP = $("<p>")
         .addClass("event")
-        .text(text);
+        .text(text)
+        .attr("data-hour", hourNumber);
 
     // replace textarea with new content
-    $(".event-textarea").replaceWith(eventP);
-
-    var hourNumber = $(this).data("hour");
-    localStorage.setItem("hour-" + hourNumber, text);
+    $("#" + hourNumber).replaceWith(eventP);
+    
+    if (text || text === "") {
+        localStorage.setItem("hour-" + hourNumber, text);
+    }
 });
 
 currentDayUpdate();
