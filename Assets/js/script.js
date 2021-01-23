@@ -46,7 +46,11 @@ $(".event-container").on("click", "p", function() {
         .data("hour", pHour)
         .attr("id", pHour)
         .val(text);
+
     $(this).replaceWith(textInput);
+
+    // auto focus new element
+    textInput.trigger("focus");
 });
 
 // the event of corrisponding time block is saved to the page and local storage
