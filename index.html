@@ -8,6 +8,10 @@
         rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         />
+        <!-- style sheet for save icon -->
+        <link 
+        rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <link
         rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -24,12 +28,147 @@
 
     <body>
         <header class="jumbotron">
-        <h1 class="display-3">Work Day Scheduler</h1>
-        <p class="lead">A simple calendar app for scheduling your work day</p>
-        <p id="currentDay" class="lead"></p>
+            <h1 class="display-3">Work Day Scheduler</h1>
+            <p class="lead">A simple calendar app for scheduling your work day</p>
+            <p id="currentDay" class="lead"></p>
         </header>
+
         <div class="container">
         <!-- Timeblocks go here -->
+            <!-- time block for 9AM -->
+            <div class="row">
+                <div class="col-1 hour-container">
+                    <h2 class="hour-title">9AM</h2>
+                </div>
+                <div class="col-10 event-container" data-hour="9">
+                    <p class="event" data-hour="9"></p>
+                </div>
+                <div class="col-1 button-container">
+                    <button type="button" class="saveBtn" data-hour="9">
+                        <span class="glyphicon glyphicon-save"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- time block for 10AM -->
+            <div class="row">
+                <div class="col-1 hour-container">
+                    <h2 class="hour-title">10AM</h2>
+                </div>
+                <div class="col-10 event-container" data-hour="10">
+                    <p class="event" data-hour="10"></p>
+                </div>
+                <div class="col-1 button-container">
+                    <button type="button" class="saveBtn" data-hour="10">
+                        <span class="glyphicon glyphicon-save"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- time block for 11AM -->
+            <div class="row">
+                <div class="col-1 hour-container">
+                    <h2 class="hour-title">11AM</h2>
+                </div>
+                <div class="col-10 event-container" data-hour="11">
+                    <p class="event" data-hour="11"></p>
+                </div>
+                <div class="col-1 button-container">
+                    <button type="button" class="saveBtn" data-hour="11">
+                        <span class="glyphicon glyphicon-save"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- time block for 12PM -->
+            <div class="row">
+                <div class="col-1 hour-container">
+                    <h2 class="hour-title">12PM</h2>
+                </div>
+                <div class="col-10 event-container" data-hour="12">
+                    <p class="event" data-hour="12"></p>
+                </div>
+                <div class="col-1 button-container">
+                    <button type="button" class="saveBtn" data-hour="12">
+                        <span class="glyphicon glyphicon-save"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- time block for 1PM -->
+            <div class="row">
+                <div class="col-1 hour-container">
+                    <h2 class="hour-title">1PM</h2>
+                </div>
+                <div class="col-10 event-container" data-hour="13">
+                    <p class="event" data-hour="13"></p>
+                </div>
+                <div class="col-1 button-container">
+                    <button type="button" class="saveBtn" data-hour="13">
+                        <span class="glyphicon glyphicon-save"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- time block for 2PM -->
+            <div class="row">
+                <div class="col-1 hour-container">
+                    <h2 class="hour-title">2PM</h2>
+                </div> 
+                <div class="col-10 event-container" data-hour="14">
+                    <p class="event"  data-hour="14"></p>
+                </div>
+                <div class="col-1 button-container">
+                    <button type="button" class="saveBtn" data-hour="14">
+                        <span class="glyphicon glyphicon-save"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- time block for 3PM -->
+            <div class="row">
+                <div class="col-1 hour-container">
+                    <h2 class="hour-title">3PM</h2>
+                </div>
+                <div class="col-10 event-container" data-hour="15">
+                    <p class="event" data-hour="15"></p>
+                </div>
+                <div class="col-1 button-container">
+                    <button type="button" class="saveBtn" data-hour="15">
+                        <span class="glyphicon glyphicon-save"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- time block for 4PM-->
+            <div class="row">
+                <div class="col-1 hour-container">
+                    <h2 class="hour-title">4PM</h2>
+                </div>
+                <div class="col-10 event-container" data-hour="16">
+                    <p class="event" data-hour="16"></p>
+                </div>
+                <div class="col-1 button-container">
+                    <button type="button" class="saveBtn" data-hour="16">
+                        <span class="glyphicon glyphicon-save"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- time block for 5PM-->
+            <div class="row">
+                <div class="col-1 hour-container">
+                    <h2 class="hour-title">5PM</h2>
+                </div>
+                <div class="col-10 event-container" data-hour="17">
+                    <p class="event" data-hour="17"></p>
+                </div>
+                <div class="col-1 button-container">
+                    <button type="button" class="saveBtn" data-hour="17">
+                        <span class="glyphicon glyphicon-save"></span>
+                    </button>
+                </div>
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
